@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is my pace? — Running Pace Calculator</title>
+  <meta name="description" content="Free running pace calculator. Enter any two of distance, time, or pace and instantly get the third. Supports km and miles, with presets for 5k, 10k, half marathon, and marathon.">
+  <meta name="keywords" content="running pace calculator, pace calculator, run pace, km per hour, min per km, 5k pace, 10k pace, half marathon pace, marathon pace">
+  <meta name="author" content="whatismypace">
+  <link rel="canonical" href="https://whatismypace.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://whatismypace.com/">
+  <meta property="og:title" content="What is my pace? — Running Pace Calculator">
+  <meta property="og:description" content="Free running pace calculator. Enter distance and time to get pace, or any other combination. Supports km and miles.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is my pace? — Running Pace Calculator">
+  <meta name="twitter:description" content="Free running pace calculator. Enter distance and time to get pace, or any other combination. Supports km and miles.">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+  <h1>What is my pace?</h1>
+  <div id="box">
+    <div>
+      <span>I ran </span>
+      <div id="distance-wrap">
+        <input class="num-input" placeholder="0.0" id="distance-input" inputmode="decimal" />
+        <div id="distance-dropdown">
+          <button type="button" data-km="5">5k</button>
+          <button type="button" data-km="10">10k</button>
+          <button type="button" data-km="21.0975">Half Marathon</button>
+          <button type="button" data-km="42.195">Marathon</button>
+        </div>
+      </div>
+      <span>
+        <div id="unit-box">
+          <div id="unit">
+            <div id="km">km</div>
+            <div id="mi">mi</div>
+          </div>
+        </div>
+      </span>
+      <span> in </span>
+      <div class="time-box">
+        <input placeholder="hh" id="time-hour" maxlength="2" inputmode="numeric" pattern="[0-9]*" />
+        <span class="sep">:</span>
+        <input placeholder="mm" id="time-minute" maxlength="2" inputmode="numeric" pattern="[0-9]*" />
+        <span class="sep">:</span>
+        <input placeholder="ss" id="time-second" maxlength="2" inputmode="numeric" pattern="[0-9]*" />
+      </div>
+      <span>.</span>
+    </div>
+    <div>
+      <span>My pace was </span>
+      <div class="time-box">
+        <input placeholder="mm" id="pace-minute" maxlength="2" inputmode="numeric" pattern="[0-9]*" />
+        <span class="sep">:</span>
+        <input placeholder="ss" id="pace-second" maxlength="2" inputmode="numeric" pattern="[0-9]*" />
+      </div>
+      <span>per km.</span>
+    </div>
+    <div>
+      <span>My speed was <span id="speed">15</span> km/h!</span>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
